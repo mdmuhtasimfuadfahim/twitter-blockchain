@@ -8,7 +8,8 @@ import { HiOutlineMail, HiMail } from 'react-icons/hi'
 import { FaRegListAlt, FaHashtag, FaBell } from 'react-icons/fa'
 import { CgMoreO } from 'react-icons/cg'
 import { VscTwitter } from 'react-icons/vsc'
-import styled from "styled-components";
+import styled from "styled-components"
+import Link from 'next/link'
 
 // import Modal from 'react-modal'
 // import { customStyles } from '../lib/constants'
@@ -20,7 +21,7 @@ import {
     BsPersonFill,
   } from 'react-icons/bs'
 
-  const Wrapper = styled.div`
+const Wrapper = styled.div`
   overflow-y: scroll;
   :: -webkit-scrollbar{
     display: none;

@@ -1,14 +1,20 @@
 import { BsStars } from 'react-icons/bs'
 import TweetBox from './TweetBox'
 import Post from '../Post'
+import styled from 'styled-components'
 
 const style = {
-    wrapper: `flex-[2] border-r border-l border-[#38444d] `,
+    wrapper: `flex-[2] border-r border-l border-[#38444d]`,
     header: `sticky top-0 bg-[#15202b] z-8 p-2 flex justify-between items-center`,
     headerTitle: `text-xl font-bold`,
   }
 
-  const tweets = [{
+const Wrapper = styled.div`
+  overflow-y: scroll;
+  :: -webkit-scrollbar{
+    display: none;
+}`
+const tweets = [{
       displayName: 'Muhtasim',
       userName: '0xD869656272c1e1367e2582BeD9008270E4210BC8',
       avatar: '',
@@ -35,7 +41,7 @@ const style = {
 ]
 function Feed(){
     return(
-        <div className={style.wrapper}>
+        <Wrapper className={style.wrapper}>
             <div className={style.header}>
                 <div className={style.headerTitle}>Home</div>
                 <BsStars />
@@ -51,7 +57,7 @@ function Feed(){
                   isProfileImageNft={tweet.isProfileImageNft} 
                 />
             ))}
-        </div>
+        </Wrapper>
     )
 }
 

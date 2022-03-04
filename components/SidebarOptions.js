@@ -1,3 +1,4 @@
+import { useRouter } from "next/router"
 
 
 const style = {
@@ -8,11 +9,15 @@ const style = {
   }
 
 function SidebarOptions({text, Icon, isActive, setSelected, redirect}){
+    const router = useRouter()
     return(
         <div 
         className={style.wrapper}
         onClick={() =>{
             setSelected(text)
+            if(redirect){
+               router.push(redirect)
+            }else return
         }}>
             <div className={style.iconContainer}>
                 <Icon />
